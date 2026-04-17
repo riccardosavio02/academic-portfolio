@@ -9,11 +9,11 @@ I bridge the gap between complex numerical modeling and experimental validation 
 ## 📂 Repository Structure
 
 ### 🛠️ [Projects](./Projects)
-Detailed technical reports covering numerical simulations and experimental analysis:
-* **Hypersonic Aerothermodynamics:** In-depth study of high-enthalpy gas dynamics, thermal loads, and chemical non-equilibrium during re-entry phase.
-* **Computational Fluid Dynamics:** Advanced numerical methods (ENO, Riemann solvers) and multi-regime simulations leveraging Adaptive Mesh Refinement techniques.
-* **Aeroacoustics:** Investigation into propeller noise reduction techniques.
-* **
+Detailed technical reports covering numerical simulations, experimental analysis, and academic thesis:
+* **[BSc Thesis: Anti-sloshing Devices in Liquid Propellant Tanks](./Projects/Anti_sloshing_devices_in_liquid_propellant_tanks_for_space_vehicles.pdf):** Validated a multiple radial baffle design for liquid propellant tanks against sloshing mechanical models.
+* **[Hypersonic Aerothermodynamics](./Projects/HYPERSONICS_Assignment_Report.pdf):** In-depth study of high-enthalpy gas dynamics, thermal loads, and chemical non-equilibrium during re-entry phase.
+* **[Computational Fluid Dynamics](./Projects/CFD_Assignment_Report.pdf):** Advanced numerical methods (ENO, Riemann solvers) and multi-regime simulations, leveraging Adaptive Mesh Refinement techniques.
+* **[Aeroacoustics: Propeller Noise Reduction](./Projects/AEROACOUSTICS_Propeller_Noise_Reduction.pdf):** Investigation into propeller noise spectra and innovative noise reduction techniques.
 
 ### 📄 [Publications](./Publications)
 * **SkiSlo Project Article:** Research paper developed with the Alta Scuola Politecnica team on Digital Twin technologies for alpine ski safety.
