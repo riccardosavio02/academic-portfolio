@@ -27,9 +27,9 @@ Detailed technical reports covering numerical simulations, experimental analysis
 
 ## 🌐 Featured Work
 I am also featured on the following external platform:
-* [**Project Title/Website Name**](https://skislo.eu/home/) – *Overview of SkiSlo project's mission, process and stakeholders.*
+* [**SkiSlo**](https://skislo.eu/home/) – *Overview of SkiSlo project's mission, process and stakeholders.*
 
 ---
 
 ## 📫 Connect with me
-[LinkedIn](https://www.linkedin.com/in/riccardo-savio/) | [Email](mailto:riccardosavio02@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/riccardo-savio/) | [Email](mailto:riccardosavio02@gmail.com) | [Phone](+393669542710)
