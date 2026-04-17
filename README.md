@@ -16,7 +16,7 @@ Detailed technical reports covering numerical simulations, experimental analysis
 * **[Aeroacoustics: Propeller Noise Reduction](./Projects/AEROACOUSTICS_Propeller_Noise_Reduction.pdf):** Investigation into propeller noise spectra and innovative noise reduction techniques.
 
 ### 📄 [Publications](./Publications)
-* **SkiSlo Project Article:** Research paper developed with the Alta Scuola Politecnica team on Digital Twin technologies for alpine ski safety.
+* **[SkiSlo: Leveraging Digital Twins to improve Ski Safety](./Publications/SkiSlo_DARLI-AP_2026.pdf):** Co-authored research paper for DARLI-AP 2026. The work proposes a novel framework that integrates UAV-based Digital Surface Models (LiDAR and photogrammetry) with advanced physical descent simulations to perform objective, data-driven risk assessment on alpine ski slopes.
 
 ### 🏆 [Certifications](./Certifications)
 * **Swagelok:** Tube Fittings Installation Essentials (Hands-on hardware certification).
