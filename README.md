@@ -27,7 +27,8 @@ Detailed technical reports covering numerical simulations, experimental analysis
 
 ## Featured Work
 I am also featured on the following external platform:
-* [**SkiSlo**](https://skislo.eu/home/) – *Overview of SkiSlo project's mission, process and stakeholders.*
+* [**SkiSlo**](https://skislo.eu/home/en/) – *Overview of SkiSlo project's mission, process and stakeholders.*
+* [**PoliTo Rocket Team**](https://www.politorocketteam.it/about/current-team) - *Official website of PoliTo Rocket Team, featuring current team members, projects and competitions*
 
 ---
 
