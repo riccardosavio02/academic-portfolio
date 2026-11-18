@@ -17,5 +17,5 @@ hypervelocity impact  ──►  damage in the shield  ──►  supersonic hig
 
 | Folder | Content | Status |
 |---|---|---|
-| [ULB_Hypervelocity_Impact](./ULB_Hypervelocity_Impact) | User material (Fortran VUMAT), full model set-up to reproduce the simulations, results against LS-DYNA and experiments | Completed |
+| [ULB_Hypervelocity_Impact](./ULB_Hypervelocity_Impact) | User material (Fortran VUMAT), Python generator of the Abaqus model, results against LS-DYNA and experiments | Completed |
 | [VKI_Plasmatron](./VKI_Plasmatron) | Aerothermodynamics of the damaged surface | In progress |

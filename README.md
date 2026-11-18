@@ -26,7 +26,7 @@ ballistic impact*, within the HITS project. Supervisors: Prof. T. Magin (ULB/VKI
 **Phase 1 in numbers**, against the LS-DYNA model of Moore and Teixeira-Dias (2025) and the tests and simulations of Ren et al. (2021):
 perforation within 5.5 %, ejecta angle within 10 %, axial pressure within 8 %, energy balance within 0.1 %, mesh-converged.
 
-→ The VUMAT, the full model set-up and the results: **[Thesis/](./Thesis)**
+→ The VUMAT, the Python generator of the Abaqus model and the results: **[Thesis/](./Thesis)**
 
 ---
 

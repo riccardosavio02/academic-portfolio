@@ -1,0 +1,68 @@
+# config_impact.yaml -- input of generate_inp.py for the NbC/Al2024 Whipple shield of
+# Moore & Teixeira-Dias (2025), Target 2: Al2024 sphere (R = 2 mm) at 7 km/s, NbC 1.17 mm
+# tied to Al2024 2 mm, 50 x 50 mm plates. ONE user material (vumat_hvi.f, HVI_MULTI) and ONE
+# section for the three bodies, FEM-to-SPH conversion decided by the VUMAT.
+# Reproduces the run shown in the README:  python3 generate_inp.py config_impact.yaml
+# Change geometry.*.nx/ny/nz and geometry.sphere.n_div to change the mesh.
+# Units: mm, tonne, s, MPa.
+#
+# Copyright 2026 Riccardo Savio -- SPDX-License-Identifier: Apache-2.0 (see LICENSE and NOTICE)
+output: {job_name: impact, field_intervals: 24}
+geometry:
+  nbc: {lx: 50.0, ly: 50.0, thickness: 1.17, nx: 340, ny: 340, nz: 7, section: shared_al}
+  al: {lx: 50.0, ly: 50.0, thickness: 2.0, nx: 340, ny: 340, nz: 14}
+  sphere: {radius: 2.0, gap: 0.8, n_div: 29, alpha: 0.4, mesh: cartesian, section: shared_al}
+simulation:
+  velocity: -7000000.0
+  time: 1.2e-05
+  friction: 0.2
+  bulk_viscosity: [0.6, 1.2]
+  boundary: encastre
+  eroding_contact: true
+  sphere_contact: false
+  plate_pair: false
+  penalty_scale: 10
+  mass_scaling_dt: 1.0e-10
+material_nbc:
+  name: ABQ_JH2_NBC
+  density: 4.8e-09
+  depvar: 8
+  fs: 0.1
+  user_material:
+    constants: 32
+    values:
+    - [4.8e-09, 164000.0, 0.88, 0.64, 0.28, 0.6, 0.007, 1.0]
+    - [262.0, 1.2, 0.15, 6570.0, 3440.0, 1.0]
+    - [0.001, 0.5, 1.2, 0.0, 0.2, 0.0]
+    - [238000.0, 160000.0, 277400.0]
+material_al2024:
+  name: AL2024_JC_MG
+  model: vumat_multi
+  energy_transfer: false
+  density: 2.8e-09
+  johnson_cook_plastic: {A: 265.0, B: 426.0, n: 0.34, m: 1.7, Tmelt: 775.0, Troom: 293.0}
+  rate_dependent: {C: 0.015, edot0: 1.0}
+  damage_initiation: legacy_ductile
+  damage_ductile: {d1: 0.112, d2: 0.123, d3: 1.5, d4: 0.007, d5: 0.0}
+  damage_maxs: {s11: 2600.0, s22: 2600.0, s33: 2600.0}
+  damage_evolution: {type: ENERGY, value: 0.0001}
+  eos_usup: {c0: 5328000.0, S1: 1.338, gamma0: 2.0}
+  eos_shear_G: 27600.0
+  specific_heat: 875000000.0
+  inelastic_heat_fraction: 0.9
+  body_sdv: true
+  eps_c: 0.35
+section_controls:
+  nbc: {name: NBC_CTRL, distortion_control: true, length_ratio: 0.5, element_conversion: true, conversion_criterion: STRAIN,
+    sct: 0.001, particles_per_direction: 1}
+  al: {name: AL_CTRL, distortion_control: true, length_ratio: 0.7, element_conversion: true, conversion_criterion: USER,
+    sct: 0.45, particles_per_direction: 1}
+  sphere: {name: SPH_CTRL, distortion_control: true, length_ratio: 0.7, element_conversion: true, conversion_criterion: USER,
+    sct: 0.45, particles_per_direction: 1}
+output_request:
+  field_nbc: [S, SDV, STATUS]
+  field_al: [S, STATUS, PEEQ, TEMP]
+  field_sphere: [S, STATUS, PEEQ]
+  node: [U, V]
+  history_freq: 10
+  energy: [ETOTAL, ALLKE, ALLIE, ALLPD, ALLVD, ALLFD, ALLAE, ALLSE, ALLWK, ALLPW, ALLCW, ALLMW]

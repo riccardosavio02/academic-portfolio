@@ -12,7 +12,8 @@ simulated in LS-DYNA and tested by Ren et al. (2021).
 | File | Content |
 |---|---|
 | [`vumat_hvi.f`](./vumat_hvi.f) | User material, Fortran 77 (~900 lines). Needs Abaqus's own `vaba_param.inc` (licensed by Dassault, not included) |
-| [`impact_model_keywords.inp`](./impact_model_keywords.inp) | Abaqus input deck of the run shown below, as a **keyword skeleton**: every material constant, section, conversion control, contact, step and output request as run; node, element and set lists cut after the first lines (the full deck is 293 MB, above GitHub's 100 MB limit; rebuild the mesh from the dimensions in [Model](#model)) |
+| [`generate_inp.py`](./generate_inp.py) | Python generator of the Abaqus input deck: mesh of the three bodies, sets, the single section, materials, contact, step and outputs (Python 3, PyYAML) |
+| [`config_impact.yaml`](./config_impact.yaml) | Input of the generator for the run shown below: geometry, mesh, material constants and solver settings |
 | [`LICENSE`](./LICENSE), [`NOTICE`](./NOTICE) | Apache 2.0 licence and attribution notice (see [Licence](#licence)) |
 | [`figures/`](./figures) | Animation, debris cloud at 12 µs, comparison table, pressure gauges, verification of the VUMAT |
 
@@ -56,8 +57,11 @@ pressure, bulking pressure (NbC), plastic strain rate (NbC), body (1 sphere, 2 N
 ### Run
 
 ```bash
-abaqus job=impact input=impact_model.inp user=vumat_hvi.f double=both cpus=1
+python3 generate_inp.py config_impact.yaml        # writes impact.inp (2.4 M elements, ~290 MB)
+abaqus job=impact input=impact.inp user=vumat_hvi.f double=both cpus=1
 ```
+Change the mesh with `geometry.nbc/al.nx, ny, nz` and `geometry.sphere.n_div` in the YAML, or on the command line
+(`--set geometry.sphere.n_div=36`); any other entry can be overridden the same way.
 Use one CPU without `domains=`: Abaqus 2025 (no Feature Pack) crashes in the SPH packager with more than one domain.
 
 ## Verification of the user material
@@ -91,7 +95,7 @@ with NaN-poisoned outputs and floating-point traps, in single and double precisi
 
 ## Licence
 
-© 2026 Riccardo Savio. The code and the model (`vumat_hvi.f`, `impact_model_keywords.inp`) are released under the [Apache License 2.0](./LICENSE): you may use and modify it,
+© 2026 Riccardo Savio. The code (`vumat_hvi.f`, `generate_inp.py`, `config_impact.yaml`) is released under the [Apache License 2.0](./LICENSE): you may use and modify it,
 but every copy or derivative must keep the copyright notice and the [NOTICE](./NOTICE) file, and modified files must say
 that they were changed. Text, tables and figures in this folder are released under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): any reuse must credit the author.
