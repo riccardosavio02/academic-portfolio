@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use the Abaqus user material (vumat_hvi) or the results in Thesis/ULB_Hypervelocity_Impact, please cite it as below."
+title: "vumat_hvi: an Abaqus/Explicit user material for hypervelocity impact on NbC/Al2024 Whipple shields with FEM-to-SPH conversion"
+authors:
+  - family-names: Savio
+    given-names: Riccardo
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/riccardosavio02/academic-portfolio"
+year: 2026
+keywords:
+  - hypervelocity impact
+  - Abaqus/Explicit
+  - VUMAT
+  - SPH
+  - Johnson-Cook
+  - Johnson-Holmquist
+  - Whipple shield

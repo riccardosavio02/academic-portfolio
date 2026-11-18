@@ -1,0 +1,13 @@
+vumat_hvi -- Abaqus/Explicit user material for hypervelocity impact on ceramic/aluminium shields
+Copyright 2026 Riccardo Savio
+
+This product includes software, model data and results developed by Riccardo Savio
+during his MSc thesis (Politecnico di Torino, carried out at the Universite libre de Bruxelles
+and the von Karman Institute for Fluid Dynamics).
+
+Any redistribution or derivative work must retain this NOTICE file and credit the original author.
+Publications, reports or presentations that use this code or results derived from it should cite:
+
+  R. Savio, "vumat_hvi: an Abaqus/Explicit user material for hypervelocity impact on
+  NbC/Al2024 Whipple shields with FEM-to-SPH conversion", 2026.
+  https://github.com/riccardosavio02/academic-portfolio
